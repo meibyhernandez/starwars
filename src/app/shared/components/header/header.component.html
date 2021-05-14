@@ -1,0 +1,41 @@
+<header>
+
+  <button>
+    <a routerLink="register"></a>
+  </button>
+
+  <nav class="navbar navbar-expand-lg " id="navba">
+    <div class="container-fluid" >
+      
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" routerLink="/">Inicio</a>
+          </li>
+          <li class="nav-item"  routerLinkActive="active">
+            <a class="nav-link " aria-current="page" routerLink="character-list">Personajes</a>
+          </li>
+          <li class="nav-item" routerLinkActive="active">
+            <a class="nav-link" [routerLink]="['starships']">Naves</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="planets-list">Planetas</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Vehículos</a>
+          </li>
+          
+        </ul>
+      </div>
+    </div>
+  
+
+  </nav>
+  <app-form-search></app-form-search>
+</header>
+
+
+

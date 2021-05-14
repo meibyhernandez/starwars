@@ -1,0 +1,46 @@
+
+
+<div class="row animated fadeIn " *ngIf="characters.length == 0">
+    <div class="col-md-12">
+        <div class="alert alert-info" role="alert">
+            <strong>No matches found : {{ id }}</strong>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-xs-12 col-sm-6 col-md-3" *ngFor="let character of characters">
+        <div class="card">
+            <div class="image">
+                <a [routerLink]="['/character-details', character.url]">
+                    <img src="http://img4.wikia.nocookie.net/__cb20080815045819/starwars/images/thumb/7/73/Chewbaccaheadshot.jpg/500px-Chewbaccaheadshot.jpg"
+                    [alt]="character.name"
+                    class="card-img-top"/>
+                </a>
+            </div>
+            <div class="card-inner">
+                <div class="header">
+                    <a [routerLink]="['/character-details', character.url]">
+                        <h2>{{character.name}}</h2>
+                    </a>
+                    <h4 class="text-muted">{{character.mass}}</h4>
+                    <small class="text-muted">{{character.height }}</small>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="pages" class="form-group row ">
+        <div class="col-sm-1">
+            <label for="cantidadClientes" class="col-sm-1 col-form-label"> Página: </label>
+        </div>
+        <div class="col-sm-1">
+            <input type="number" #page class="form-control" id="cantidadClientes" value="1">
+        </div>
+        <div class="col-sm-1">
+            <button type="button" class="btn" (click)="getPeop(page.value)">Buscar</button>
+        </div>
+    </div>
+  
+</div>
+
