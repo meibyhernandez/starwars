@@ -60,8 +60,6 @@ export class CharacterListComponent implements OnInit {
     });
   }
 
-  
-
   getPeop(pageNum:number){
     if (pageNum) {
       this.characterSvc.getPeoples(pageNum)

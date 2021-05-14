@@ -23,7 +23,7 @@ export class FormSearchComponent implements OnInit {
   onSearch(value: string) {
    
       this.router.navigate(['/character-list', value], {
-       //queryParams: { q: value },
+       queryParams: { q: value },
       });
     
   }

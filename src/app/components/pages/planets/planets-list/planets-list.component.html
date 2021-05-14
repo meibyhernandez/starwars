@@ -1,9 +1,9 @@
 <div class="row">
-    <div class="col-xs-12 col-sm-6 col-md-3" *ngFor="let planet of planets">
+    <div class="col-xs-12 col-sm-6 col-md-3" *ngFor="let planet of planetas">
         <div class="card">
             <div class="image">
                 <a [routerLink]="['/character-details', planet.url]">
-                    <img src="http://img4.wikia.nocookie.net/__cb20080815045819/starwars/images/thumb/7/73/Chewbaccaheadshot.jpg/500px-Chewbaccaheadshot.jpg"
+                    <img src="http://img2.wikia.nocookie.net/__cb20130226044533/starwars/images/thumb/1/18/Tatooine3.png/500px-Tatooine3.png"
                     [alt]="planets.name"
                     class="card-img-top"/>
                 </a>
@@ -28,7 +28,7 @@
             <input type="number" #page class="form-control" id="cantidadClientes" value="1">
         </div>
         <div class="col-sm-1">
-            <button type="button" class="btn" (click)="getPeop(page.value)">Buscar</button>
+            <button type="button" class="btn" (click)="getPlanets(page.value)">Buscar</button>
         </div>
     </div>
   

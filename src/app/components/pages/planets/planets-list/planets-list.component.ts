@@ -18,6 +18,8 @@ export class PlanetsListComponent implements OnInit {
 
 
   planets: Planets[] = [];
+  planetas:Array<Planets>=[];
+
   next: null;
   id:string;
 
@@ -29,10 +31,10 @@ export class PlanetsListComponent implements OnInit {
   constructor(private characterSvc: CharacterService, private route: ActivatedRoute, private router: Router) { this.onUrlChanged()}
 
   ngOnInit(): void {
-    this.route.params.subscribe ( params => {
-      this.id = params['termino'];
-      this.getPlane(this.id);   
-    })
+    
+
+    var ships=this.getPlanets(1);
+    ships;
   }
 
   private onUrlChanged(): void {
@@ -54,33 +56,21 @@ export class PlanetsListComponent implements OnInit {
 
   
 
-  getPeop(pageNum:number){
+  getPlanets(pageNum:number){
     if (pageNum) {
       this.characterSvc.getPlanets(pageNum)
       .subscribe((lstPlanets: Array<Planets>)=>{
-        this.planets=lstPlanets; 
+        this.planetas=lstPlanets; 
       });
     }
     else{
       alert('No puede estar vacio');
-      this.planets=[];
+      this.planetas=[];
     }
   }
 
 
   
-  getPlane(index:string){   
-    this.planets.filter(x=>x.name.toLowerCase().includes(index));
-
-    /*this.characterSvc.getPeoples().subscribe(
-      data => {
-        //Object.values(this.charac).filter(x=>x.name.toLowerCase().includes(index));
-        this.charac = this.charac.filter(x=>x.name.toLowerCase().includes(index));
-      },
-      error=>{
-        console.log(error);
-      });*/
-  }
 
   private getDataFromService(): void {
     this.characterSvc
